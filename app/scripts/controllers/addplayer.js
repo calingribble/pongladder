@@ -2,28 +2,26 @@
 
 /**
  * @ngdoc function
- * @name sarpgApp.controller:RegisterCtrl
+ * @name sarpgApp.controller:AddplayerCtrl
  * @description
- * # RegisterCtrl
+ * # AddplayerCtrl
  * Controller of the sarpgApp
  */
 angular.module('sarpgApp')
-.controller('RegisterCtrl', ['$scope', '$rootScope', '$http', '$location',
+.controller('AddplayerCtrl', ['$scope', '$rootScope', '$http', '$location',
   function($scope, $rootScope, $http, $location) {
-    //$http.defaults.headers.post["Content-Type"] = "application/json";
-    $scope.account = {};
+    $scope.player = {};
 
-    $scope.register = function() {
+    $scope.addplayer = function() {
       //$scope.error = null;
-      $http.post('http://localhost:8000/api/accounts', {
-        email: $scope.account.email,
-        password: $scope.account.password,
-        confirmPassword: $scope.account.confirmPassword
+      $http.post('http://localhost:8000/api/players', {
+        name: $scope.player.name,
+        handle: $scope.player.handle
       })
       .success(function(response) {
-console.log(response);
+//console.log(response);
         // authentication OK
-        //$scope.registerError = 0;
+        //$scope.addgameError = 0;
         //$rootScope.account = $scope.account;
         //$rootScope.$emit('loggedin');
         $location.url('/');

@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
     <!-- endbower -->
     <!-- endbuild -->
-    <!-- build:css(.tmp) styles/main.css -->
+    <!-- build:css(.tmp) styles/ladder.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
@@ -24,17 +24,16 @@
     <div class="container">
       <div class="header">
         <ul class="nav nav-pills pull-right">
-          <li><a ng-href="/">Main</a></li>
-          <li><a ng-href="/register">Register</a></li>
-          <li><a ng-href="/login">Login</a></li>
+          <li><a ng-href="#">Ladder</a></li>
+          <li><a ng-href="#/addgame">Add Game</a></li>
+          <li><a ng-href="#/addplayer">Add Player</a></li>
         </ul>
-        <h3 class="text-muted">sarpg</h3>
+        <h3 class="text-muted">pong ladder</h3>
       </div>
 
       <div ng-view=""></div>
 
     </div>
-
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <script>
@@ -64,13 +63,22 @@
     <script src="bower_components/angular-animate/angular-animate.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.2/js/bootstrap-select.min.js"></script>
+    <script src="bower_components/nya-bootstrap-select/src/nya-bootstrap-select.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/controllers/register.js"></script>
+        <script src="scripts/controllers/ladder.js"></script>
+        <script src="scripts/controllers/addgame.js"></script>
+        <script src="scripts/controllers/addplayer.js"></script>
         <!-- endbuild -->
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.2/css/bootstrap-select.min.css" />
+    <!--<script>-->
+      <!--$('.selectpicker').selectpicker();-->
+    <!--</script>-->
+
 </body>
 </html>

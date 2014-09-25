@@ -1,7 +1,9 @@
 {
   "name": "sarpg",
   "version": "0.0.0",
-  "dependencies": {},
+  "dependencies": {
+    "bootstrap-select": "^1.6.2"
+  },
   "devDependencies": {
     "grunt": "^0.4.1",
     "grunt-autoprefixer": "^0.7.3",

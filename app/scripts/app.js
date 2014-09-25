@@ -6,7 +6,7 @@
  * @description
  * # sarpgApp
  *
- * Main module of the application.
+ * Ladder module of the application.
  */
 angular
   .module('sarpgApp', [
@@ -15,22 +15,22 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'nya.bootstrap.select'
   ])
   .config(function ($routeProvider, $locationProvider) {
-    $locationProvider.html5Mode(true);
     $routeProvider
+      .when('/addgame', {
+        templateUrl: 'views/addgame.html',
+        controller: 'AddgameCtrl'
+      })
+      .when('/addplayer', {
+        templateUrl: 'views/addplayer.html',
+        controller: 'AddplayerCtrl'
+      })
       .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
-      })
-      .when('/register', {
-        templateUrl: 'views/register.html',
-        controller: 'RegisterCtrl'
-      })
-      .when('/login', {
-        templateUrl: 'views/login.html',
-        controller: 'LoginCtrl'
+        templateUrl: 'views/ladder.html',
+        controller: 'LadderCtrl'
       })
       .otherwise({
         redirectTo: '/'

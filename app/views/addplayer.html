@@ -1,0 +1,27 @@
+<!--<div data-ng-controller="AddplayerCtrl">-->
+  <!--<div ng-repeat="error in addplayerError">-->
+    <!--<div class="alert alert-danger animated fadeIn">{{error.msg}}</div>-->
+  <!--</div>-->
+  <!--<div class="alert alert-danger animated fadeIn" ng-show="error">{{error}}</div>-->
+
+  <h1>Add Player</h1>
+  <form ng-submit="addplayer()" class="signup form-horizontal">
+    <div class="form-group">
+      <label for="name" class="col-md-4 control-label">Name</label>
+      <div class="col-md-8">
+        <input id="name" type="name" name="name" placeholder="Name" class="form-control" ng-model="player.name"/>
+      </div>
+    </div>
+    <!--<div class="form-group">-->
+      <!--<label for="handle" class="col-md-4 control-label">Handle</label>-->
+      <!--<div class="col-md-8">-->
+        <!--<input id="handle" type="handle" name="handle" placeholder="Handle" class="form-control" ng-model="player.handle"/>-->
+      <!--</div>-->
+    <!--</div>-->
+    <div class="form-group">
+      <div class="col-md-offset-4 col-md-8">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+  </form>
+<!--</div>-->
