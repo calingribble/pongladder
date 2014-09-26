@@ -1,66 +1,20 @@
-<!--<div data-ng-controller="AddgameCtrl">-->
-    <!--<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.2/css/bootstrap-select.min.css" />-->
-    <!--<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.2/js/bootstrap-select.min.js"></script>-->
-  <!--<div ng-repeat="error in addgameError">-->
-    <!--<div class="alert alert-danger animated fadeIn">{{error.msg}}</div>-->
-  <!--</div>-->
-  <!--<div class="alert alert-danger animated fadeIn" ng-show="error">{{error}}</div>-->
-
-  <h1>Add Game</h1>
-  <!--<select class="selectpicker" data-show-subtext="true" style="display: none;" ng-model="players.name">-->
-    <!--<option ng-repeat="player in players track by $index">-->
-      <!--{{player.name}}-->
-    <!--</option>-->
-    <!--<option data-ng-repeat="player in players">{{player.name}}</option>-->
-    <!--<option data-subtext="French's">Mustard</option>-->
-    <!--<option data-subtext="Heinz">Ketchup</option>-->
-    <!--<option data-subtext="Sweet">Relish</option>-->
-    <!--<option data-subtext="Miracle Whip">Mayonnaise</option>-->
-    <!--<option data-subtext="Honey">Barbecue Sauce</option>-->
-    <!--<option data-subtext="Ranch">Salad Dressing</option>-->
-    <!--<option data-subtext="Sweet and Spicy">Tabasco</option>-->
-    <!--<option data-subtext="Chunky">Salsa</option>-->
-  <!--</select>-->
-
-    <!--<script>-->
-      <!--$('.selectpicker').selectpicker();-->
-    <!--</script>-->
-  <form ng-submit="addgame()" class="signup form-horizontal">
-    <div class="form-group">
-      <label for="winnername" class="col-md-4 control-label">Winner</label>
-      <select id="winnername" class="nya-selectpicker" ng-model="winner" data-container="body" multiple>
-        <option ng-repeat="player in players" value="{{player.name}}" showSubtext='true'>{{player.name}} {{player.rating}}</option>
-      </select>
+<h1>Add Game</h1>
+<form ng-submit="addgame()" class="signup form-horizontal">
+  <div class="form-group">
+    <label for="winnername" class="col-md-4 control-label">Winner</label>
+    <select id="winnername" class="nya-selectpicker" ng-model="winner" data-container="body" multiple>
+      <option ng-repeat="player in players" value="{{player.name}}" showSubtext='true'>{{player.name}}: {{player.rating}}</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="losername" class="col-md-4 control-label">Loser</label>
+    <select id="losername" class="nya-selectpicker" ng-model="loser" data-container="body" multiple>
+      <option ng-repeat="player in players" value="{{player.name}}" showSubtext='true'>{{player.name}}: {{player.rating}}</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <div class="col-md-offset-6 col-md-8">
+      <button type="submit" class="btn btn-primary">Submit</button>
     </div>
-    <div class="form-group">
-      <label for="losername" class="col-md-4 control-label">Loser</label>
-      <select id="losername" class="nya-selectpicker" ng-model="loser" data-container="body" multiple>
-        <option ng-repeat="player in players" value="{{player.name}}" showSubtext='true'>{{player.name}} {{player.rating}}</option>
-      </select>
-    </div>
-  </form>
-    <!--<div class="form-group">-->
-      <!--<label for="email" class="col-md-4 control-label">Email</label>-->
-      <!--<div class="col-md-8">-->
-        <!--<input id="email" type="email" name="email" placeholder="Email" class="form-control" ng-model="account.email"/>-->
-      <!--</div>-->
-    <!--</div>-->
-    <!--<div class="form-group">-->
-      <!--<label for="password" class="col-md-4 control-label">Password</label>-->
-      <!--<div class="col-md-8">-->
-        <!--<input id="password" type="password" name="password" placeholder="Password" class="form-control" ng-model="account.password"/>-->
-      <!--</div>-->
-    <!--</div>-->
-    <!--<div class="form-group">-->
-      <!--<label for="confirmPassword" class="col-md-4 control-label">Confirm Password</label>-->
-      <!--<div class="col-md-8">-->
-        <!--<input id="confirmPassword" type="password" name="confirmPassword" placeholder="Password" class="form-control" ng-model="account.confirmPassword"/>-->
-      <!--</div>-->
-    <!--</div>-->
-    <!--<div class="form-group">-->
-      <!--<div class="col-md-offset-4 col-md-8">-->
-        <!--<button type="submit" class="btn btn-primary">Sign up</button>&nbsp;-->
-        <!--or&nbsp;<a ui-sref='auth.login' class="show-login">login</a>-->
-      <!--</div>-->
-    <!--</div>-->
-<!--</div>-->
+  </div>
+</form>

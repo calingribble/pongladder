@@ -16,7 +16,8 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'nya.bootstrap.select'
+    'nya.bootstrap.select',
+    'ui.bootstrap'
   ])
   .config(function ($routeProvider, $locationProvider) {
     $routeProvider
@@ -36,3 +37,5 @@ angular
         redirectTo: '/'
       });
   });
+        //templateUrl: 'views/ladder.html',
+        //controller: 'LadderCtrl'

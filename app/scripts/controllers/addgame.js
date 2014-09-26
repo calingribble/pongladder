@@ -10,23 +10,23 @@
 angular.module('sarpgApp')
 .controller('AddgameCtrl', ['$scope', '$rootScope', '$http', '$location',
   function($scope, $rootScope, $http, $location) {
-    //$http.defaults.headers.post['Content-Type'] = 'application/json';
 
     $scope.winner = {};
+    $scope.loser = {};
 
     $scope.$watch(
       function( $scope ) {
-      //if($scope.winner && $scope.winner.length > 0){
-        //$scope.winner = $scope.winner;
-      //}
-      // This becomes the value we're "watching".
       return( $scope.winner );
     },
-    function( winner ) {
-      if(winner && winner.length > 1){
-        winner = winner[1];
-      }
-      console.log( winner );
+    function(winner) {
+    }
+    );
+
+    $scope.$watch(
+      function( $scope ) {
+      return( $scope.loser );
+    },
+    function( loser ) {
     }
     );
 
@@ -36,25 +36,15 @@ angular.module('sarpgApp')
     });
 
     $scope.addgame = function() {
-      //$scope.error = null;
       $http.post('http://localhost:8000/api/games', {
         winner: $scope.winner,
-        loser: $scope.loser,
-        winnerscore: $scope.winnerscore,
-        loserscore: $scope.loserscore
+        loser: $scope.loser
       })
       .success(function(response) {
-//console.log(response);
-        // authentication OK
-        //$scope.addgameError = 0;
-        //$rootScope.account = $scope.account;
-        //$rootScope.$emit('loggedin');
         $location.url('/');
       })
       .error(function(response) {
-console.log(response);
-        // Error: authentication failed
-          //$scope.error = error;
+        console.log(response);
       });
     };
   }

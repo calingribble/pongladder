@@ -1,5 +1,48 @@
-<!--<div data-ng-controller="LadderCtrl">-->
-  <div class="jumbotron">
-    <h1>Ladder View</h1>
-  </div>
+ <!--<h1>Top Performers</h1>-->
+<!--<div class="panel-group" id="accordion">-->
+  <!--<div ng-repeat="player in players | orderBy:'rating':true">-->
+    <!--<a class="whatever" data-toggle="collapse" data-parent="#accordion" href="#{{player.name}}">-->
+      <!--<div class="panel panel-default">-->
+        <!--<div class="panel-heading">-->
+          <!--<h4 class="panel-title">-->
+            <!--{{player.name}}<font size="2" color="grey"> ({{player.wins}}{{player.losses}})</font><p style="float: right;">{{player.rating}}</p>-->
+          <!--</h4>-->
+        <!--</div>-->
+      <!--</a>-->
+      <!--<div id="{{player.name}}" class="panel-collapse collapse">-->
+        <!--<div class="panel-body">-->
+          <!--Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
 <!--</div>-->
+
+<p>
+    <button class="btn btn-default btn-sm" ng-click="status.open = !status.open">Toggle last panel</button>
+    <button class="btn btn-default btn-sm" ng-click="status.isFirstDisabled = ! status.isFirstDisabled">Enable / Disable first panel</button>
+  </p>
+
+  <label class="checkbox">
+    <input type="checkbox" ng-model="oneAtATime">
+    Open only one at a time
+  </label>
+  <accordion close-others="oneAtATime">
+    <accordion-group heading="Static Header, initially expanded" is-open="status.isFirstOpen" is-disabled="status.isFirstDisabled">
+      This content is straight in the template.
+    </accordion-group>
+    <accordion-group heading="{{group.title}}" ng-repeat="group in groups">
+      {{group.content}}
+    </accordion-group>
+    <accordion-group heading="Dynamic Body Content">
+      <p>The body of the accordion group grows to fit the contents</p>
+        <button class="btn btn-default btn-sm" ng-click="addItem()">Add Item</button>
+        <div ng-repeat="item in items">{{item}}</div>
+    </accordion-group>
+    <accordion-group is-open="status.open">
+        <accordion-heading>
+            I can have markup, too! <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+        </accordion-heading>
+        This is just some content to illustrate fancy headings.
+    </accordion-group>
+  </accordion>
