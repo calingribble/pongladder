@@ -13,23 +13,15 @@ angular.module('sarpgApp')
     $scope.player = {};
 
     $scope.addplayer = function() {
-      //$scope.error = null;
       $http.post('http://localhost:8000/api/players', {
         name: $scope.player.name,
         handle: $scope.player.handle
       })
       .success(function(response) {
-//console.log(response);
-        // authentication OK
-        //$scope.addgameError = 0;
-        //$rootScope.account = $scope.account;
-        //$rootScope.$emit('loggedin');
         $location.url('/');
       })
       .error(function(response) {
-console.log(response);
-        // Error: authentication failed
-          //$scope.error = error;
+        console.log(response);
       });
     };
   }

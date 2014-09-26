@@ -8,11 +8,21 @@
  * Controller of the sarpgApp
  */
 angular.module('sarpgApp')
+.filter('range', function() {
+  return function(input, total) {
+    total = parseInt(total);
+    for (var i=0; i<total; i++)
+    input.push(i);
+    return input;
+  };
+})
 .controller('AddgameCtrl', ['$scope', '$rootScope', '$http', '$location',
   function($scope, $rootScope, $http, $location) {
 
     $scope.winner = {};
     $scope.loser = {};
+    $scope.winnerpoints;
+    $scope.loserpoints;
 
     $scope.$watch(
       function( $scope ) {
@@ -38,7 +48,9 @@ angular.module('sarpgApp')
     $scope.addgame = function() {
       $http.post('http://localhost:8000/api/games', {
         winner: $scope.winner,
-        loser: $scope.loser
+        loser: $scope.loser,
+        winnerPoints: $scope.winnerpoints,
+        loserPoints: $scope.loserpoints
       })
       .success(function(response) {
         $location.url('/');
