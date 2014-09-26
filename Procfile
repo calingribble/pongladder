@@ -1,1 +1,1 @@
-web: grunt serve -f
+grunt serve -f

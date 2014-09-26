@@ -13,7 +13,7 @@ angular.module('sarpgApp')
     $scope.player = {};
 
     $scope.addplayer = function() {
-      $http.post('http://localhost:8000/api/players', {
+      $http.post('http://pong-ladder-api.herokuapp.com/api/players', {
         name: $scope.player.name,
         handle: $scope.player.handle
       })

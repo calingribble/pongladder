@@ -31,7 +31,7 @@ angular.module('sarpgApp')
       }
     };
 
-    $http.get('http://localhost:8000/api/players')
+    $http.get('http://pong-ladder-api.herokuapp.com/api/players')
     .success(function(response) {
       $scope.players = response;
       for(var i = 0; i < $scope.players.length; i++) {

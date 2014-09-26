@@ -40,13 +40,13 @@ angular.module('sarpgApp')
     }
     );
 
-    $http.get('http://localhost:8000/api/players')
+    $http.get('http://pong-ladder-api.herokuapp.com/api/players')
     .success(function(response) {
       $scope.players = response;
     });
 
     $scope.addgame = function() {
-      $http.post('http://localhost:8000/api/games', {
+      $http.post('http://pong-ladder-api.herokuapp.com/api/games', {
         winner: $scope.winner,
         loser: $scope.loser,
         winnerPoints: $scope.winnerpoints,
