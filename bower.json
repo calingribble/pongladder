@@ -13,6 +13,7 @@
     "angular-touch": "1.2.16",
     "ui-bootstrap": "0.11.1",
     "bootstrap-select": "latest",
+    "nya-bootstrap-select": "latest",
     "angular-route": "1.2.16"
   },
   "devDependencies": {
