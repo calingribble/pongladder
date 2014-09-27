@@ -46,18 +46,20 @@ angular.module('sarpgApp')
     });
 
     $scope.addgame = function() {
-      $http.post('http://pong-ladder-api.herokuapp.com/api/games', {
-        winner: $scope.winner,
-        loser: $scope.loser,
-        winnerPoints: $scope.winnerpoints,
-        loserPoints: $scope.loserpoints
-      })
-      .success(function(response) {
-        $location.url('/');
-      })
-      .error(function(response) {
-        console.log(response);
-      });
+      if($scope.winner && $scope.loser && $scope.winnerpoints && $scope.loserpoints){
+        $http.post('http://pong-ladder-api.herokuapp.com/api/games', {
+          winner: $scope.winner,
+          loser: $scope.loser,
+          winnerPoints: $scope.winnerpoints,
+          loserPoints: $scope.loserpoints
+        })
+        .success(function(response) {
+          $location.url('/');
+        })
+        .error(function(response) {
+          console.log(response);
+        });
+      }
     };
   }
 ]);
