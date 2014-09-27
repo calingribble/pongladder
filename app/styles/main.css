@@ -94,10 +94,9 @@ a:visited {
 }
 
 a:hover {
-    color: blue;
-    text-decoration: none; !important
+    underline: none; !important
 }
 
 a:active {
-    text-decoration: none; !important
+    underline: none; !important
 }
