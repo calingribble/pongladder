@@ -8,8 +8,8 @@
  * Controller of the sarpgApp
  */
 angular.module('sarpgApp')
-.controller('LadderCtrl', ['$scope', '$rootScope', '$http', '$location',
-  function($scope, $rootScope, $http, $location) {
+.controller('LadderCtrl', ['$scope', '$rootScope', '$http', '$location', '$timeout'
+  function($scope, $rootScope, $http, $location, $timeout) {
     $scope.players = {};
     $scope.fontcolor;
     $scope.getmedalcolor = function(num){
@@ -38,5 +38,15 @@ angular.module('sarpgApp')
         $scope.players[i].accordionclass = "panel-collapse collapse";
       }
     });
+
+    $timeout(function() {
+      $http.get('http://pong-ladder-api.herokuapp.com/api/players')
+      .success(function(response) {
+        $scope.players = response;
+        for(var i = 0; i < $scope.players.length; i++) {
+          $scope.players[i].accordionclass = "panel-collapse collapse";
+        }
+      });
+    }, 30000);
   }
 ]);
