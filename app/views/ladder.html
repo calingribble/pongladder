@@ -1,0 +1,21 @@
+ <h1>Top Performers</h1>
+<div class="panel-group" id="accordion">
+  <div ng-repeat="player in players | orderBy:'rating':true">
+    <a data-toggle="collapse" data-parent="#accordion" href="" ng-click="(switchaccordionclass(player))">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            {{$index+1}}. <span ng-if="$index < 3"><font color="{{getmedalcolor($index)}}"><i class="icon ion-ribbon-a"></i></font></span> {{player.name}} <font size="2" color="grey"> ({{player.wins}}-{{player.losses}})</font><p style="float: right;">{{player.rating}}</p>
+          </h4>
+        </div>
+      </a>
+      <div class="{{player.accordionclass}}">
+        <div class="panel-body">
+          <b>win %:</b> {{ (player.wins / (player.wins + player.losses) || 0.000).toFixed(3) }} <br>
+          <b>points for:</b> {{ player.pointsFor }} <br>
+          <b>points against:</b> {{ player.pointsAgainst }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
