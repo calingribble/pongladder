@@ -8,7 +8,7 @@
  * Controller of the pongladderApp
  */
 angular.module('pongladderApp')
-.controller('LadderCtrl', ['$scope', '$rootScope', '$http', '$location', '$timeout'
+.controller('LadderCtrl', ['$scope', '$rootScope', '$http', '$location', '$timeout',
   function($scope, $rootScope, $http, $location, $timeout) {
     $scope.players = {};
     $scope.fontcolor;
