@@ -2,39 +2,32 @@
 
 /**
  * @ngdoc overview
- * @name sarpgApp
+ * @name pongladderApp
  * @description
- * # sarpgApp
+ * # pongladderApp
  *
- * Ladder module of the application.
+ * Main module of the application.
  */
 angular
-  .module('sarpgApp', [
+  .module('pongladderApp', [
     'ngAnimate',
     'ngCookies',
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch',
-    'nya.bootstrap.select'
+    'ngTouch'
   ])
-  .config(function ($routeProvider, $locationProvider) {
+  .config(function ($routeProvider) {
     $routeProvider
-      .when('/addgame', {
-        templateUrl: 'views/addgame.html',
-        controller: 'AddgameCtrl'
-      })
-      .when('/addplayer', {
-        templateUrl: 'views/addplayer.html',
-        controller: 'AddplayerCtrl'
-      })
       .when('/', {
-        templateUrl: 'views/ladder.html',
-        controller: 'LadderCtrl'
+        templateUrl: 'views/main.html',
+        controller: 'MainCtrl'
+      })
+      .when('/about', {
+        templateUrl: 'views/about.html',
+        controller: 'AboutCtrl'
       })
       .otherwise({
-        templateUrl: 'views/ladder.html',
-        controller: 'LadderCtrl'
-        //redirectTo: '/'
+        redirectTo: '/'
       });
   });
