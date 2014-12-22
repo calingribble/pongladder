@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name sarpgApp.controller:AddplayerCtrl
+ * @name pongladderApp.controller:AddplayerCtrl
  * @description
  * # AddplayerCtrl
- * Controller of the sarpgApp
+ * Controller of the pongladderApp
  */
-angular.module('sarpgApp')
+angular.module('pongladderApp')
 .controller('AddplayerCtrl', ['$scope', '$rootScope', '$http', '$location',
   function($scope, $rootScope, $http, $location) {
     $scope.player = {};

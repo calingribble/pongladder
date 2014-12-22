@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name sarpgApp.controller:AddgameCtrl
+ * @name pongladderApp.controller:AddgameCtrl
  * @description
  * # AddgameCtrl
- * Controller of the sarpgApp
+ * Controller of the pongladderApp
  */
-angular.module('sarpgApp')
+angular.module('pongladderApp')
 .filter('range', function() {
   return function(input, total) {
     total = parseInt(total);

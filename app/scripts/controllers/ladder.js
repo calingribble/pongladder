@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name sarpgApp.controller:LadderCtrl
+ * @name pongladderApp.controller:LadderCtrl
  * @description
  * # LadderCtrl
- * Controller of the sarpgApp
+ * Controller of the pongladderApp
  */
-angular.module('sarpgApp')
+angular.module('pongladderApp')
 .controller('LadderCtrl', ['$scope', '$rootScope', '$http', '$location', '$timeout'
   function($scope, $rootScope, $http, $location, $timeout) {
     $scope.players = {};
