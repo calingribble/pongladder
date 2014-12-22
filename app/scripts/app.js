@@ -23,10 +23,6 @@ angular
         templateUrl: 'views/ladder.html',
         controller: 'LadderCtrl'
       })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl'
-      })
      .when('/addgame', {
         templateUrl: 'views/addgame.html',
         controller: 'AddgameCtrl'
