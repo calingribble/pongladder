@@ -1,5 +1,85 @@
  <h1>Top Performers</h1>
 <div class="panel-group" id="accordion">
+  <section class="widget widget-tabs">
+  <header>
+  <ul class="nav nav-tabs">
+    <li class="active">
+    <a href="#players" data-toggle="tab">Players</a>
+    </li>
+    <li>
+    <a href="#games" data-toggle="tab">Games</a>
+    </li>
+  </ul>
+  </header>
+  <div class="body tab-content">
+    <div id="players" class="tab-pane active clearfix">
+      <ul class="news-list">
+        <li>
+        <img src="img/1.jpg" alt="" class="pull-left img-circle"/>
+        <div class="news-item-info">
+          <div class="name"><a href="#">Finees Lund</a></div>
+          <div class="position">Product Designer</div>
+          <div class="time">Last logged-in: Mar 20, 18:46</div>
+        </div>
+        </li>
+        <li>
+        <img src="img/3.jpg" alt="" class="pull-left img-circle"/>
+        <div class="news-item-info">
+          <div class="name"><a href="#">Erebus Novak</a></div>
+          <div class="position">Software Engineer</div>
+          <div class="time">Last logged-in: Mar 23, 9:02</div>
+        </div>
+        </li>
+        <li>
+        <img src="img/2.jpg" alt="" class="pull-left img-circle"/>
+        <div class="news-item-info">
+          <div class="name"><a href="#">Leopoldo Reier</a></div>
+          <div class="position">Chief Officer</div>
+          <div class="time">Last logged-in: Jun 6, 15:34</div>
+        </div>
+        </li>
+        <li>
+        <img src="img/13.jpg" alt="" class="pull-left img-circle"/>
+        <div class="news-item-info">
+          <div class="name"><a href="#">Frans Garey</a></div>
+          <div class="position">Financial Assistant</div>
+          <div class="time">Last logged-in: Jun 8, 17:20</div>
+        </div>
+        </li>
+        <li>
+        <img src="img/14.jpg" alt="" class="pull-left img-circle"/>
+        <div class="news-item-info">
+          <div class="name"><a href="#">Jessica Johnsson</a></div>
+          <div class="position">Sales Manager</div>
+          <div class="time">Last logged-in: Jun 8, 9:13</div>
+        </div>
+        </li>
+      </ul>
+    </div>
+    <div id="report" class="tab-pane">
+      <h5 class="tab-header"><i class="fa fa-star"></i> Popular contacts</h5>
+      <ul class="news-list news-list-no-hover">
+        <li>
+        <img src="img/14.jpg" alt="" class="pull-left img-circle"/>
+        <div class="news-item-info">
+          <div class="name"><a href="#">Jessica Johnsson</a></div>
+          <div class="options">
+            <button class="btn btn-xs btn-success">
+              <i class="fa fa-phone"></i>
+              Call
+            </button>
+            <button class="btn btn-xs btn-warning">
+              <i class="fa fa-envelope-o"></i>
+              Message
+            </button>
+          </div>
+        </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  </section>
+
   <div ng-repeat="player in players | orderBy:'rating':true">
     <a data-toggle="collapse" data-parent="#accordion" href="" ng-click="(switchaccordionclass(player))">
       <div class="panel panel-default">
@@ -16,69 +96,6 @@
           <b>points against:</b> {{ player.pointsAgainst }}
         </div>
       </div>
-                <section class="widget widget-tabs">
-                    <header>
-                        <ul class="nav nav-tabs">
-                            <li class="active">
-                                <a href="#stats" data-toggle="tab">Users</a>
-                            </li>
-                            <li>
-                                <a href="#report" data-toggle="tab">Favorites</a>
-                            </li>
-                            <li>
-                                <a href="#dropdown1" data-toggle="tab">Commenters</a>
-                            </li>
-                        </ul>
-                    </header>
-                    <div class="body tab-content">
-                        <div id="stats" class="tab-pane active clearfix">
-                            <h5 class="tab-header"><span class="label label-primary"><i class="fa fa-facebook"></i></span> Last logged-in users</h5>
-                            <ul class="news-list">
-                                <li>
-                                    <img src="img/1.jpg" alt="" class="pull-left img-circle"/>
-                                    <div class="news-item-info">
-                                        <div class="name"><a href="#">Finees Lund</a></div>
-                                        <div class="position">Product Designer</div>
-                                        <div class="time">Last logged-in: Mar 20, 18:46</div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <img src="img/3.jpg" alt="" class="pull-left img-circle"/>
-                                    <div class="news-item-info">
-                                        <div class="name"><a href="#">Erebus Novak</a></div>
-                                        <div class="position">Software Engineer</div>
-                                        <div class="time">Last logged-in: Mar 23, 9:02</div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <img src="img/2.jpg" alt="" class="pull-left img-circle"/>
-                                    <div class="news-item-info">
-                                        <div class="name"><a href="#">Leopoldo Reier</a></div>
-                                        <div class="position">Chief Officer</div>
-                                        <div class="time">Last logged-in: Jun 6, 15:34</div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <img src="img/13.jpg" alt="" class="pull-left img-circle"/>
-                                    <div class="news-item-info">
-                                        <div class="name"><a href="#">Frans Garey</a></div>
-                                        <div class="position">Financial Assistant</div>
-                                        <div class="time">Last logged-in: Jun 8, 17:20</div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <img src="img/14.jpg" alt="" class="pull-left img-circle"/>
-                                    <div class="news-item-info">
-                                        <div class="name"><a href="#">Jessica Johnsson</a></div>
-                                        <div class="position">Sales Manager</div>
-                                        <div class="time">Last logged-in: Jun 8, 9:13</div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                      </div>
-                      </section>
-
     </div>
   </div>
 </div>
